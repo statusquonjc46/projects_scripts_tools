@@ -1,7 +1,7 @@
 import csv
 import copy
 
-compareCSV = input("Enter the file you want to compare against CMP's Database")
+compareCSV = input("Enter the file you want to compare against CMP's Database: \n")
 newData = open(compareCSV, "r")
 dataBase = open("CMPList.csv", "r")
 
@@ -31,7 +31,7 @@ for a in preclin:
                 userinput = input("Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
                 if userinput == "y":
                     print("--------------------------------------------------------------\n")
-                    print("["a + "] has been confirmed as the same company as [" + b + "]\n")
+                    print("[" + a + "] has been confirmed as the same company as [" + b + "]\n")
                     print("--------------------------------------------------------------\n")
                     notInBoth.remove(a)
                 if userinput == "n":
