@@ -1,8 +1,9 @@
 import csv
 import copy
 
-newData = open("test.csv", "r")
-dataBase = open("test1.csv", "r")
+compareCSV = input("Enter the file you want to compare against CMP's Database")
+newData = open(compareCSV, "r")
+dataBase = open("CMPList.csv", "r")
 
 testList = list(newData)
 test1List = list(dataBase)
