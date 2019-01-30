@@ -16,10 +16,12 @@ notInBoth = []
 
 for i in testList:
     new = i.strip()
-    preclin.append(new)
+    newer = new.replace('"', '')
+    preclin.append(newer)
 for j in test1List:
     new = j.strip()
-    cmp.append(new)
+    newer = new.replace('"', '')
+    cmp.append(newer)
 
 notInBoth = copy.deepcopy(preclin)
 
@@ -27,13 +29,27 @@ for a in preclin:
     for b in cmp:
         print(a, b)
         if a[0] == b[0]:
-            if a[:4] in b[:4]:
+            if a[:6] in b[:6]:
+                if a[:5] == "Pharm":
+                    if a[:8] in b[:8]:
+                        userinput = input("Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
+                        if userinput == "y":
+                            print("--------------------------------------------------------------\n")
+                            print("[" + a + "] has been confirmed as the same company as [" + b + "]\n")
+                            print("--------------------------------------------------------------\n")
+                            notInBoth.remove(a)
+                            break
+                        if userinput == "n":
+                            print("----------------------------------------------------------\n")
+                            print("These companies do not match. Continuing matching process.\n")
+                            print("----------------------------------------------------------\n")
                 userinput = input("Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
                 if userinput == "y":
                     print("--------------------------------------------------------------\n")
                     print("[" + a + "] has been confirmed as the same company as [" + b + "]\n")
                     print("--------------------------------------------------------------\n")
                     notInBoth.remove(a)
+                    break
                 if userinput == "n":
                     print("----------------------------------------------------------\n")
                     print("These companies do not match. Continuing matching process.\n")
@@ -41,7 +57,7 @@ for a in preclin:
 
 print("All comparisons complete, creating new CSV of companies not in our database.\n")
 
-csvFile = open('NotInDatabase.csv', 'w')
+csvFile = open("NotInDataBase.csv", 'w')
 writer = csv.writer(csvFile)
 for item in notInBoth:
     writer.writerow([item])
