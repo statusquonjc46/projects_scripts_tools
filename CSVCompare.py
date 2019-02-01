@@ -1,9 +1,14 @@
+#!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 import csv
 import copy
+import sys
+
+print(sys.version)
 
 compareCSV = input("Enter the file you want to compare against CMP's Database: \n")
-newData = open(compareCSV, "r")
-dataBase = open("CMPList.csv", "r")
+print (compareCSV)
+newData = open("/Users/nicholascoletta/Desktop/" + compareCSV, "r")
+dataBase = open("/Users/nicholascoletta/Desktop/CMPList.csv", "r")
 
 testList = list(newData)
 test1List = list(dataBase)
@@ -32,7 +37,8 @@ for a in preclin:
             if a[:6] in b[:6]:
                 if a[:5] == "Pharm":
                     if a[:8] in b[:8]:
-                        userinput = input("Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
+                        userinput = input(
+                            "Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
                         if userinput == "y":
                             print("--------------------------------------------------------------\n")
                             print("[" + a + "] has been confirmed as the same company as [" + b + "]\n")
@@ -43,7 +49,8 @@ for a in preclin:
                             print("----------------------------------------------------------\n")
                             print("These companies do not match. Continuing matching process.\n")
                             print("----------------------------------------------------------\n")
-                userinput = input("Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
+                userinput = input(
+                    "Are these the same company: [" + a + "] and [" + b + "] [y for yes, n for no]\n")
                 if userinput == "y":
                     print("--------------------------------------------------------------\n")
                     print("[" + a + "] has been confirmed as the same company as [" + b + "]\n")
@@ -63,4 +70,4 @@ for item in notInBoth:
     writer.writerow([item])
 csvFile.close()
 
-print("CSV creation complete. Exiting...")
+print("CSV creation complete. Exiting...\n")
