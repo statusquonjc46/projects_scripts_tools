@@ -157,15 +157,3 @@ class CEO(PersonnelSalary):
 
     def getCEOList(self):       # gets the list of CEOs and returns it.
         return (CEO.ceoList)
-
-
-channel = Company('CMP', 'Manasquan', 'Business Development',
-                  'www.ChannelMethodsPartners.com', '000-000-000')
-channelPersonnel = PersonnelCount(1, 2, 3, 4)
-channelSal = PersonnelSalary(200000, 120000, 90000, 50000)
-channelCEO = CEO('brian')
-
-# print(repr(channelPersonnel))
-# print(str(channelPersonnel))
-print(channelCEO.salary(channelSal))
-print(channelSal.getTotalSal())
