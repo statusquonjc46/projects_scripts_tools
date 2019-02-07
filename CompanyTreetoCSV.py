@@ -105,12 +105,54 @@ class PersonnelSalary(PersonnelCount):
 
 
 class Employee(PersonnelCount):
-    pass
+    employeeList = []
+    fullname = ''
+    employeeDict = {'id': '', 'First Name': '', 'Last Name': '',
+                    'Date of Hire': '', 'Telephone': '', 'Position': ''}
+    count = 0
+
+    def __init__(self, first, last, doh, telephone, position):
+        self.first = first
+        self.last = last
+        self.doh = doh
+        self.telephone = telephone
+        self.position = position
+
+    def __repr__(self):
+        return 'Employee([firstname]:%s, [lastname]:%s, [date of hire(01012019)]:%s, [phone number]:%s, [position]:%s)' % (self.first, self.last, self.doh, self.telephone, self.position)
+
+    def __str__(self):
+        return 'First name: %s\nLast name: %s\nDate of Hire: %s\nPhone number: %s\nPosition: %s' % (self.first, self.last, self.doh, self.telephone, self. position)
+
+    def getFullName(self):
+        Employee.fullname = self.first + ' ' + self.last
+        return Employee.fullname
+
+    def addEmployee(self):
+        Employee.count += 1
+        Employee.employeeDict['id'] = Employee.count
+        Employee.employeeDict['First Name'] = self.first
+        Employee.employeeDict['Last Name'] = self.last
+        Employee.employeeDict['Date of Hire'] = self.doh
+        Employee.employeeDict['Telephone'] = self.telephone
+        Employee.employeeDict['Position'] = self.position
+        Employee.employeeList.append(Employee.employeeDict.copy())
+
+    def delEmployee():
+        for i in range(len(Employee.employeeList)):
+            print(Employee.employeeList[i])
+        userInput = input('Please indicate which ID you would like to delete(from above):')
+        delIndex = int(userInput) - 1
+        Employee.employeeList.pop(delIndex)
+
+    def getEmployees():
+        return (Employee.employeeList, Employee.employeeDict)
+
 
 # Sub to all above, CEO Object, containts CEO specific methods. May be redundant, not sure yet.
 
 
-class CEO(PersonnelSalary):
+class CEO(Employee):
     ceoList = []        # Store all CEOs in here.
 
     def __init__(self, founderOne, founderTwo=None, founderThree=None):
@@ -157,3 +199,26 @@ class CEO(PersonnelSalary):
 
     def getCEOList(self):       # gets the list of CEOs and returns it.
         return (CEO.ceoList)
+
+
+channel = Company('CMP', 'Manasquan', 'Business Development',
+                  'www.ChannelMethodsPartners.com', '000-000-000')
+channelPersonnel = PersonnelCount(1, 2, 3, 4)
+channelSal = PersonnelSalary(200000, 120000, 90000, 50000)
+channelCEO = CEO('brian')
+
+emp_1 = Employee('Nick', 'Coletta', '11202019', '7322679219', 'IT Support')
+emp_1.addEmployee()
+emp_2 = Employee('Rob', 'Lanzieri', '11222019', '7322639219', 'IT Support')
+emp_2.addEmployee()
+# print(Employee.getEmployees())
+Employee.delEmployee()
+print(Employee.getEmployees())
+
+emp_3 = Employee('Mike', 'Walsh', '11112019', '999999999', 'BOSS')
+emp_3.addEmployee()
+print(Employee.getEmployees())
+# print(repr(channelPersonnel))
+# print(str(channelPersonnel))
+# print(channelCEO.salary(channelSal))
+# print(channelSal.getTotalSal())
