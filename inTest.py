@@ -27,16 +27,18 @@ for a in preclin:
         print(a, b)
         if a[0] == b[0]:
             if a[:4] in b[:4]:
-                userinput = input("Are these the same company: " + a + " and " + b + " [y for yes, n for no]\n")
+                userinput = input("Are these the same company: " + a +
+                                  " and " + b + " [y for yes, n for no]\n")
                 if userinput == "y":
                     print(a + " has been confirmed as the same company as " + b + "\n")
                     notInBoth.remove(a)
                 if userinput == "n":
                     print("These companies do not match. Continuing matching process.\n")
 print(preclin)
-                            
-            
-#for a in preclin:
+
+
+# REALLY BAD CODE FOLLOWS.
+# for a in preclin:
 #    for b in cmp:
 #        print(a, b)
 #        if a[:1] in b[:1]:
@@ -88,11 +90,10 @@ print(preclin)
 #                print("Added to list of companies not in our database.\n")
 #            break
 
-#print(notInBoth)
+# print(notInBoth)
 #
 csvFile = open('NotInDatabase.csv', 'w')
 writer = csv.writer(csvFile)
 for item in notInBoth:
     writer.writerow([item])
 csvFile.close()
-

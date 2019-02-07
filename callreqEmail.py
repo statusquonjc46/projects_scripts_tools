@@ -35,12 +35,12 @@ for num in messages[0].split():
     print('To: ' + msgTo + '\n')
     print('Subject: ' + msgSub + '\n')
 
-    #if formattedEmail.is_multipart():
-      #  for payload in formattedEmail.get_payload():
-     #       print(payload.get_payload())
-    #else:
-     #   print(formattedEmail.get_payload(decode=True))
-    #type(formattedEmail)
+    # if formattedEmail.is_multipart():
+    #  for payload in formattedEmail.get_payload():
+    #       print(payload.get_payload())
+    # else:
+    #   print(formattedEmail.get_payload(decode=True))
+    # type(formattedEmail)
 
     if formattedEmail.is_multipart():
         for walker in formattedEmail.get_payload():
