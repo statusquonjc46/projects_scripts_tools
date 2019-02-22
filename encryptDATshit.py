@@ -6,13 +6,14 @@
 import pyAesCrypt
 import getopt
 import sys
+import os
 
 bufferSize = 64 * 1024
 progArgs = sys.argv
 argList = progArgs[1:]
 
-unixOptions = 'hed'
-gnuOptions = ['help', 'encrypt', 'decrypt']
+unixOptions = 'hedtT'
+gnuOptions = ['help', 'encrypt', 'decrypt', 'direncrypt', 'dirdecrypt']
 
 
 def encryptorino():
@@ -26,9 +27,26 @@ def encryptorino():
 def decryptorino():
     dFile = input('Which file do you wish to decrypt[Please provide the full file path]:  ')
     dKey = input('Please enter the key you used to encrypt this file:  ')
-    outF = dFile[:4] + '.raw'
+    outF = "new" + dFile[:4]
     pyAesCrypt.decryptFile(dFile, outF, dKey, bufferSize)
     return 'File decrypted.'
+
+
+def encryptADirectorino():
+    eFolder = input('Which directory would you like to encrypt: ')
+    ePath = input('What is the path to the directory: ')
+    eKey = input('Please enter a key you wish to use to encrypt this directory: ')
+    tarF = eFolder + '.tar'
+    print('Creating .tar file...')
+    os.system('tar -cvf ./' + tarF + ' --directory=' + ePath + ' ' + eFolder)
+    eFile = ePath + '/' + tarF
+    outF = tarF + 'crypt'
+    print('Encrypting .tar file...')
+    pyAesCrypt.encryptFile(eFile, outF, eKey, bufferSize)
+    print('Success! ' + outF + ' has been created in ' + ePath)
+    print('Deleting original tar file...')
+    os.system('rm -f ' + tarF)
+    print('Exiting...')
 
 
 try:
@@ -39,16 +57,23 @@ except getopt.error as err:
 
 for currentArgument, currentValue in arguments:
     if currentArgument in ('-h', '--help'):
-        print('--------------------------------------------')
+        print('-------------------------------------------------')
         print('long argument   short argument  Description')
-        print('--------------------------------------------')
+        print('-------------------------------------------------')
         print('--help           -h             Prints Help')
         print('--encrypt        -e             Encrypt File')
         print('--decrypt        -d             Decrypt File')
-        print('--------------------------------------------')
+        print('--direncrypt     -t             Encrypt Directory')
+        print('--dirdecrypt     -T             Decrypt Directory')
+        print('-------------------------------------------------')
     elif currentArgument in ('-e', '--encrypt'):
         print ('You chose to encrypt a file.')
         encryptorino()
     elif currentArgument in ('-d', '--decrypt'):
         print ('You chose to decrypt a file.')
         decryptorino()
+    elif currentArgument in ('-t', '--direncrypt'):
+        print('You chose to encrypt a directory.')
+        encryptADirectorino()
+    elif currentArgument in ('-T', '--dirdecrypt'):
+        print('You chose to decrypt a directory.')
