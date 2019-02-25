@@ -78,6 +78,8 @@ except getopt.error as err:
 for current_argument, current_value in arguments:
     if current_argument in ('-h', '--help'):
         print("""
+        Usage format:
+            python3 encryptDATshit.py <option>
         -------------------------------------------------
         long argument   short argument  Description
         -------------------------------------------------
@@ -106,6 +108,8 @@ for current_argument, current_value in arguments:
         print('Exiting...')
     else:
         print("""
+        Usage format:
+            python3 encryptDATshit.py <option>
         -------------------------------------------------
         long argument   short argument  Description
         -------------------------------------------------
