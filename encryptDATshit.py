@@ -73,6 +73,19 @@ try:
     arguments, values = getopt.getopt(arg_list, unix_options, gnu_options)
 except getopt.error as err:
     print (str(err))
+    print("""
+        Usage format:
+            python3 encryptDATshit.py <option>
+        -------------------------------------------------
+        long argument   short argument  Description
+        -------------------------------------------------
+        --help           -h             Prints Help
+        --encrypt        -e             Encrypt File
+        --decrypt        -d             Decrypt File
+        --direncrypt     -E             Encrypt Directory
+        --dirdecrypt     -D             Decrypt Directory
+        -------------------------------------------------
+        """)
     sys.exit(2)
 
 for current_argument, current_value in arguments:
@@ -106,17 +119,3 @@ for current_argument, current_value in arguments:
         print('You chose to decrypt a directory.')
         decrypt_a_directorino()
         print('Exiting...')
-    else:
-        print("""
-        Usage format:
-            python3 encryptDATshit.py <option>
-        -------------------------------------------------
-        long argument   short argument  Description
-        -------------------------------------------------
-        --help           -h             Prints Help
-        --encrypt        -e             Encrypt File
-        --decrypt        -d             Decrypt File
-        --direncrypt     -E             Encrypt Directory
-        --dirdecrypt     -D             Decrypt Directory
-        -------------------------------------------------
-        """)
