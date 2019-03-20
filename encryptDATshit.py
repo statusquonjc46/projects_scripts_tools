@@ -30,7 +30,7 @@ def decryptorino():
     user_decrpyt_file = input(
         'Which file do you wish to decrypt[Please provide the full file path]:  ')
     encryption_key = input('Please enter the key you used to encrypt this file:  ')
-    output_file_name = f'new{user_decrpyt_file[:-11]}'
+    output_file_name = f'{user_decrpyt_file[:-11]}'
     print(f'Decrypting {user_decrpyt_file}...')
     pyAesCrypt.decryptFile(user_decrpyt_file, output_file_name, encryption_key, buffer_size)
     print(f'File decrypted. {user_decrpyt_file} ---> {output_file_name}.')
