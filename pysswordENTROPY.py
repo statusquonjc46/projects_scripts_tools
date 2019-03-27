@@ -4,9 +4,8 @@
 # www.github.com/statusquonjc46 for plenty of other python things that may or may not be useful to you. Also my IT490 full stack project lol.
 
 import random
-import string
 
-word_file = open('/Users/nicholascoletta/Desktop/git/projects_with_no_real_use/words.txt', 'r')
+word_file = open('/Users/nicholascoletta/Desktop/git/projects_with_no_real_use/40kwords.txt', 'r')
 word_list = []
 
 word_list = list(word_file)
@@ -18,10 +17,10 @@ for i in word_list:
     newer = new.replace("'", '')
     password_list.append(newer)
 
-num1 = random.randint(0, 370000)
-num2 = random.randint(0, 370000)
-num3 = random.randint(0, 370000)
-num4 = random.randint(0, 370000)
+num1 = random.randint(0, 25322)
+num2 = random.randint(0, 25322)
+num3 = random.randint(0, 25322)
+num4 = random.randint(0, 25322)
 
 word1 = password_list[num1]
 word2 = password_list[num2]
