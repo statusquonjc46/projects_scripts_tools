@@ -55,11 +55,11 @@ class centerWindow(wx.Frame):
             print(rgen(32))
         if '64' in rb.GetLabel():
             self.outP.Clear()
-            print (rb.GetLabel(), 'Chosen')
+            print (rb.GetLabel(), 'Chosen:')
             print(rgen(64))
         if '12' in rb.GetLabel():
             self.outP.Clear()
-            print (rb.GetLabel(), 'Chosen')
+            print (rb.GetLabel(), 'Chosen:')
             print(rgen(128))
 
 
