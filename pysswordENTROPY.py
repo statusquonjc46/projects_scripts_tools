@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
+#! /Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 # Simple password generator based on user input bit size.
 # By Nicholas Coletta, in the year 2019.
 # www.github.com/statusquonjc46 for plenty of other python things that may or may not be useful to you. Also my IT490 full stack project lol.
