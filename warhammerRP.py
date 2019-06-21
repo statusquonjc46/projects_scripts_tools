@@ -53,6 +53,8 @@ def randomSpecies():
 def randomClass(species):
     species = species
     specClass = ''
+    specCareer = ''
+
     print("""\n
     -----------------------------------------------------------------------------------------------------------
     - Next we will roll for your class and career.
@@ -69,53 +71,137 @@ def randomClass(species):
     - Warriors: Cavalryman, Guard, Knight, Pit Fighter, Protagonist, Soldier, Slayer, Warrior Priest.
     -----------------------------------------------------------------------------------------------------------\n""")
 
-    d8 = random.randint(1, 8)
     d100 = random.randint(1, 100)
 
-    if d8 == 1:
-        specClass = 'Academics'
-    elif d8 == 2:
-        specClass = 'Burghers'
-    elif d8 == 3:
-        specClass = 'Courtiers'
-    elif d8 == 4:
-        specClass = 'Peasants'
-    elif d8 == 5:
-        specClass = 'Rangers'
-    elif d8 == 6:
-        specClass = 'Riverfolk'
-    elif d8 == 7:
-        specClass = 'Rogues'
-    elif d8 == 8:
-        specClass = 'Warriors'
-    print(species)
-    print(d8, d100)
-    print(f'The class you rolled is: {specClass}.\n')
-
-    if species == 'Human (Reiklander)' and specClass == 'Academics':
+    if species == 'Human (Reiklander)'':
         if d100 == 1:
             print('You are an Academic Human Apothecary')
-            return 'Apothecary'
+            specClass = 'Academic'
+            specCareer = 'Apothecary'
         elif d100 == 2:
             print('You are an Academic Human Engineer')
-            return 'Engineer'
+            specClass = 'Academic'
+            specCareer = 'Engineer'
         elif d100 == 3:
             print('You are an Academic Human Lawyer')
-            return 'Lawyer'
+            specClass = 'Academic'
+            specCareer = 'Lawyer'
         elif d100 == 4 or d100 == 5:
             print('You are an Academic Human Nun')
-            return 'Nun'
+            specClass = 'Academic'
+            specCareer = 'Nun'
         elif d100 == 6:
             print('You are an Academic Human Physcian')
-            return 'Physcian'
-        elif d100 > 6 or d100 < 12:
+            specClass = 'Academic'
+            specCareer = 'Physcian'
+        elif d100 > 6 and d100 < 12:
             print('You are an Academic Human Priest')
-            return 'Priest'
+            specClass = 'Academic'
+            specCareer = 'Priest'
         elif d100 == 12 or d100 == 13:
             print('You are an Academic Human Scholar')
-            return 'Scholar'
+            specClass = 'Academic'
+            specCareer = 'Scholar'
         elif d100 == 14:
             print('You are an Academic Human Wizard')
-            return 'Wizard'
+            specClass = 'Academic'
+            specCareer = 'Wizard'
+        elif d100 == 15:
+            print('You are a Burgher Human Agitator')
+            specClass = 'Burgher'
+            specCareer = 'Agitator'
+        elif d100 == 16 or d100 == 17:
+            print('You are a Burgher Human Artisan')
+            specClass = 'Burgher'
+            specCareer = 'Artisan'
+        elif d100 == 18 or d100 == 19:
+            print('You are a Burgher Human Beggar')
+            specClass = 'Burgher'
+            specCareer = 'Beggar'
+        elif d100 == 20:
+            print('You are a Burgher Human Investigator')
+            specClass = 'Burgher'
+            specCareer = 'Investigator'
+        elif d100 == 21:
+            print('You are a Burgher Human Merchant')
+            specClass = 'Burgher'
+            specCareer = 'Merchant'
+        elif d100 == 22 or d100 or 23:
+            print('You are a Burgher Human Rat Catcher')
+            specClass = 'Burgher'
+            specCareer = 'Rat Catcher'
+        elif d100 > 23 and d100 < 27:
+            print('You are a Burgher Human Townsman')
+            specClass = 'Burgher'
+            specCareer = 'Townsman'
+        elif d100 == 27:
+            print('You are a Burgher Human Watchman')
+            specClass = 'Burgher'
+            specCareer = 'Watchman'
+        elif d100 == 28:
+            print('You are a Courtier Human Advisor')
+            specClass = 'Courtier'
+            specCareer = 'Advisor'
+        elif d100 29:
+            print('You are a Courtier Human Artist')
+            specClass = 'Courtier'
+            specCareer = 'Artist'
+        elif d100 == 30:
+            print('You are a Courtier Human Duelist')
+            specClass = 'Courtier'
+            specCareer = 'Duelist'
+        elif d100 == 31:
+            print('You are an Courtier Human Envoy')
+            specClass = 'Courtier'
+            specCareer = 'Envoy'
+        elif d100 == 32:
+            print('You are a Courtier Human Noble')
+            specClass = 'Courtier'
+            specCareer = 'Noble'
+        elif d100 > 32 and d100 < 36:
+            print('You are a Courtier Human Servant')
+            specClass = 'Courtier'
+            specCareer = 'Servant'
+        elif d100 == 36:
+            print('You are a Courtier Human Spy')
+            specClass = 'Courtier'
+            specCareer = 'Spy'
+        elif d100 == 37:
+            print('You are a Courtier Human Warden')
+            specClass = 'Courtier'
+            specCareer = 'Warden'
+        elif d100 == 38:
+            print('You are a Peasant Human Bailiff')
+            specClass = 'Peasant'
+            specCareer = 'Bailiff'
+        elif d100 39:
+            print('You are a Peasant Human Hedge Witch')
+            specClass = 'Peasant'
+            specCareer = 'Hedge Witch'
+        elif d100 == 40:
+            print('You are a Peasant Human Herbalist')
+            specClass = 'Peasant'
+            specCareer = 'Herbalist'
+        elif d100 == 41 or d100 == 42:
+            print('You are a Peasant Human Hunter')
+            specClass = 'Peasant'
+            specCareer = 'Hunter'
+        elif d100 == 43:
+            print('You are a Peasant Human Miner')
+            specClass = 'Peasant'
+            specCareer = 'Miner'
+        elif d100 == 44:
+            print('You are a Peasant Human Mystic')
+            specClass = 'Peasant'
+            specCareer = 'Mystic'
+        elif d100 == 45:
+            print('You are a Peasant Human Scout')
+            specClass = 'Peasant'
+            specCareer = 'Scout'
+        elif d100 > 45 and d100 < 51:
+            print('You are a Peasant Human Villager')
+            specClass = 'Peasant'
+            specCareer = 'Villager'
+
 species = randomSpecies()
 randomClass(species)
