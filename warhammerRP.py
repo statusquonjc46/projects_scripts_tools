@@ -5,7 +5,7 @@
 
 import random
 
-#d100 = random.randint(1, 100)
+# d100 = random.randint(1, 100)
 species = ''
 specClass = ''
 career = ''
@@ -25,15 +25,15 @@ def randomSpecies():
     - Wood Elf is 100.
     - This can be found on page 24 of the 4th Edition Guide."""\n\n)
 
-    d100 = random.randint(1-100)
-    print(f'You rolled a {d100}.'\n) 
-    if d100 > 0 && d100 < 91:
+    d100 = random.randint(1, 100)
+    print(f'You rolled a {d100}.\n')
+    if d100 > 0 and d100 < 91:
         print('You got: Human (Reiklander)!'\n)
         return 'Human (Reiklander)'
-    elif d100 > 90 && d100 < 95:
+    elif d100 > 90 and d100 < 95:
         print('You got: Halfling!'\n)
         return 'Halfling'
-    elif d100 > 94 && d100 < 99:
+    elif d100 > 94 and d100 < 99:
         print('You got: Dwarf!'\n)
         return 'Dwarf'
     elif d100 == 99:
@@ -45,7 +45,7 @@ def randomSpecies():
 
 def randomClass(species):
     species = species
-    print(\n"""- Next we will roll for your class and career.
+    print("""\n- Next we will roll for your class and career.
     - The following list is the class followed by the career. I won't be typing out the details on what can be what, so please reference pages 30 and 31 of the guide.
     - I will have the correct stops in place for species not being able to be certain careers, etc.
     - Academics: Apothecary, Engineer, Lawyer, Nun, Physcian, Priest, Scholar, Wizard.
@@ -55,10 +55,10 @@ def randomClass(species):
     - Rangers: Bounty Hunter, Coachman, Entertainer, Flagellant, Messanger, Pedlar, Road Warden, Witch Hunter.
     - Riverfolk: Boatman, Huffer, Riverwarden, Riverwoman, Seaman, Smuggler, Stevedore, Wrecker.
     - Rogues: Bawd, Charlatan, Fence, Grave Robber, Outlaw, Racketeer, Thief, Witch.
-    - Warriors: Cavalryman, Guard, Knight, Pit Fighter, Protagonist, Soldier, Slayer, Warrior Priest."""\n)
+    - Warriors: Cavalryman, Guard, Knight, Pit Fighter, Protagonist, Soldier, Slayer, Warrior Priest.\n""")
 
-    d8 = random.randint(1,8)
-    d100 = random.randint(1,100)
+    d8 = random.randint(1, 8)
+    d100 = random.randint(1, 100)
 
     if d8 == 1:
         specClass = 'Academics'
@@ -77,7 +77,7 @@ def randomClass(species):
     elif d8 == 8:
         specClass == 'Warriors'
 
-    if species == 'Human (Reiklander)' && specClass == 'Academics':
+    if species == 'Human (Reiklander)' and specClass == 'Academics':
         if d100 == 1:
             print('You are an Academic Human Apothecary')
             return 'Apothecary'
@@ -87,20 +87,18 @@ def randomClass(species):
         elif d100 == 3:
             print('You are an Academic Human Lawyer')
             return 'Lawyer'
-        elif d100 == 4 || d100 == 5:
+        elif d100 == 4 or d100 == 5:
             print('You are an Academic Human Nun')
             return 'Nun'
         elif d100 == 6:
             print('You are an Academic Human Physcian')
             return 'Physcian'
-        elif d100 > 6 && d100 < 12:
+        elif d100 > 6 or d100 < 12:
             print('You are an Academic Human Priest')
             return 'Priest'
-        elif d100 == 12 || d100 == 13:
+        elif d100 == 12 or d100 == 13:
             print('You are an Academic Human Scholar')
             return 'Scholar'
         elif d100 == 14:
             print('You are an Academic Human Wizard')
             return 'Wizard'
-
-
