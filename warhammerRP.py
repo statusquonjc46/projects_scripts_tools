@@ -57,84 +57,50 @@ def randomClass(species):
 
     # Dictionaries for each class for each species containing rolls for each career.
     # Human Class with their careers.
-    humanAcademic = {1: 'Apothecary', 2: 'Engineer', 3: 'Lawyer', 4: 'Nun', 5: 'Nun', 6: 'Physcian', 7: 'Priest', 8: 'Priest',
-                        9: 'Priest', 10: 'Priest', 11: 'Priest', 12: 'Scholar', 13: 'Scholar', 14: 'Wizard'}
-    humanBurgher = {15: 'Agitator', 16: 'Artisan', 17: 'Artisan', 18: 'Beggar', 19: 'Beggar', 20: 'Investigator', 21: 'Merchant',
-                        22: 'Rat Catcher', 23: 'Rat Catcher', 24: 'Townsman', 25: 'Townsman', 26: 'Townsman', 27: 'Watchman'}
-    humanCourtier = {28: 'Advisor', 29: 'Artist', 30: 'Duelist', 31: 'Envoy', 32: 'Noble', 33: 'Servant', 34: 'Servant', 35: 'Servant',
-                     36: 'Spy', 37: 'Warden'}
-    humanPeasant = {38: 'Bailiff', 39: 'Hedge Witch', 40: 'Herbalist', 41: 'Hunter', 42: 'Hunter', 43: 'Miner', 44: 'Mystic', 45: 'Scout',
-                    46: 'Villager', 47: 'Villager', 48: 'Villager', 49: 'Villager', 50: 'Villager'}
-    humanRanger = {51: 'Bounty Hunter', 52: 'Coachman', 53: 'Entertainer', 54: 'Entertainer', 55: 'Flagellant', 56: 'Flagellant',
-                       57: 'Messenger', 58: 'Pedlar', 59: 'Road Warden', 60: 'Witch Hunter'}
-    humanRiverfolk = {61: 'Boatman', 62: 'Boatman', 63: 'Huffer', 64: 'Riverwarden', 65: 'Riverwarden', 66: 'Riverwoman', 67: 'Riverwoman',
-                          68: 'Riverwoman', 69: 'Seaman', 70: 'Seaman', 71: 'Smuggler', 72: 'Stevedore', 73: 'Stevedore', 74: 'Wrecker'}
-    humanRogue = {75: 'Bawd', 76: 'Bawd', 77: 'Charlatan', 78: 'Fence', 79: 'Grave Robber', 80: 'Outlaw', 81: 'Outlaw', 82: 'Outlaw',
-                      83: 'Outlaw', 84: 'Racketeer', 85: 'Thief', 86: 'Thief', 87: 'Thief', 88: 'Witch'}
-    humanWarrior = {89: 'Cavalryman', 90: 'Cavalryman', 91: 'Guard', 92: 'Guard', 93: 'Knight', 94: 'Pit Fighter', 95: 'Protagonist',
-                    96: 'Soldier', 97: 'Soldier', 98: 'Soldier', 99: 'Soldier', 100: 'Warrior Priest'}
+    humanAcademic = {'Apothecary': [1], 'Engineer': [2], 'Lawyer': [3], 'Nun': [4, 5], 'Physcian': [6], 'Priest': [7, 8, 9, 10, 11], 'Scholar': [12, 13], 'Wizard': [14]}
+    humanBurgher = {'Agitator': [15], 'Artisan': [16, 17], 'Beggar': [18, 19], 'Investigator': [20], 'Merchant': [21], 'Rat Catcher': [22, 23], 'Townsman': [24, 25, 26], 'Watchman': [27]}
+    humanCourtier = {'Advisor': [28], 'Artist': [29], 'Duelist': [30], 'Envoy': [31], 'Noble': [32], 'Servant': [33, 34, 35], 'Spy': [36], 'Warden': [37]}
+    humanPeasant = {'Bailiff': [38], 'Hedge Witch': [39], 'Herbalist': [40], 'Hunter': [41, 42], 'Miner': [43], 'Mystic': [44], 'Scout': [45], 'Villager': [46, 47, 48, 49, 50]}
+    humanRanger = {'Bounty Hunter': [51], 'Coachman': [52], 'Entertainer': [53, 54], 'Flagellant': [55, 56], 'Messenger': [57], 'Pedlar': [58], 'Road Warden': [59], 'Witch Huner': [60]}
+    humanRiverfolk = {'Boatman': [61, 62], 'Huffer': [63], 'Riverwarden': [64, 65], 'Riverwoman': [66, 67, 68], 'Seaman': [69, 70], 'Smuggler': [71], 'Stevedore': [72, 73], 'Wrecker': [74]}
+    humanRogue = {'Bawd': [75, 76], 'Charlatan': [77], 'Fence': [78], 'Grave Robber': [79], 'Outlaw': [80, 81, 82, 83], 'Racketeer': [84], 'Thief': [85, 86, 87], 'Witch': [88]}
+    humanWarrior = {'Cavalryman': [89, 90], 'Guard': [91, 92], 'Knight': [93], 'Pit Fighter': [94], 'Protagonist': [95], 'Soldier': [96, 97, 98, 99], 'Slayer': [], 'Warrior Priest': [100]}
 
-    # Dwarf Class with careers.
-    dwarfAcademic = {1: 'Apothecary', 2: 'Engineer', 3: 'Engineer', 4: 'Engineer', 5: 'Lawyer', 6: 'Lawyer', 7: 'Physcian', 8: 'Scholar',
-                        9: 'Scholar'}
-    dwarfBurgher = {10: 'Agitator', 11: 'Agitator', 12: 'Artisan', 13: 'Artisan', 14: 'Artisan', 15: 'Artisan', 16: 'Artisan',
-                        17: 'Artisan', 18: 'Beggar', 19: 'Investigator', 20: 'Investigator', 21: 'Merchant', 22: 'Merchant', 23: 'Merchant',
-                        24: 'Merchant', 25: 'Rat Catcher', 26: 'Townsman', 27: 'Townsman', 28: 'Townsman', 29: 'Townsman', 30: 'Townsman',
-                        31: 'Townsman', 32: 'Watchman', 33: 'Watchman', 34: 'Watchman'}
-    dwarfCourtier = {35: 'Advisor', 36: 'Advisor', 37: 'Artist', 38: 'Duelist', 39: 'Envoy', 40: 'Envoy', 41: 'Noble', 42: 'Servant',
-                     43: 'Spy', 44: 'Warden', 45: 'Warden'}
-    dwarfPeasant = {46: 'Bailiff', 47: 'Bailiff', 48: 'Hunter', 49: 'Hunter', 50: 'Miner', 51: 'Miner', 52: 'Miner', 53: 'Miner',
-                    54: 'Miner', 55: 'Scout', 56: 'Villager'}
-    dwarfRanger = {57: 'Bounty Hunter', 58: 'Bounty Hunter', 59: 'Bounty Hunter', 60: 'Bounty Hunter', 61: 'Coachman', 62: 'Entertainer',
-                       63: 'Entertainer', 64: 'Messenger', 65: 'Messenger', 66: 'Pedlar', 67: 'Pedlar'}
-    dwarfRiverfolk = {68: 'Boatman', 69: 'Boatman', 70: 'Huffer', 71: 'Riverwoman', 72: 'Riverwoman', 73: 'Seaman', 74: 'Smuggler', 75: 'Smuggler'
-                          76: 'Stevedore', 77: 'Stevedore', 78: 'Wrecker'}
-    dwarfRogue = {79: 'Fence', 80: 'Outlaw', 81: 'Outlaw', 82: 'Outlaw', 83: 'Racketeer', 84: 'Thief'}
-    dwarfWarrior = {85: 'Guard', 86: 'Guard', 87: 'Guard', 88: 'Pit Fighter', 89: 'Pit Fighter', 90: 'Pit Fighter', 91: 'Protagonist',
-                    92: 'Protagonist', 93: 'Protagonist', 94: 'Soldier', 95: 'Soldier', 96: 'Soldier', 97: 'Slayer', 98: 'Slayer', 99: 'Slayer',
-                    100: 'Warrior Priest'}
+    dwarfAcademic = {'Apothecary': [1], 'Engineer': [2, 3, 4], 'Lawyer': [5, 6], 'Nun': [], 'Physcian': [7], 'Priest': [], 'Scholar': [8, 9], 'Wizard': []}
+    dwarfBurgher = {'Agitator': [10, 11], 'Artisan': [12, 13, 14, 15, 16, 17], 'Beggar': [18], 'Investigator': [19, 20], 'Merchant': [21, 22, 23, 24], 'Rat Catcher': [25], 'Townsman': [26, 27, 28, 29, 30, 31], 'Watchman': [32, 33, 34]}
+    dwarfCourtier = {'Advisor': [35, 36], 'Artist': [37], 'Duelist': [38], 'Envoy': [39, 40], 'Noble': [41], 'Servant': [42], 'Spy': [43], 'Warden': [44, 45]}
+    dwarfPeasant = {'Bailiff': [46, 47], 'Hedge Witch': [], 'Herbalist': [], 'Hunter': [48, 49], 'Miner': [50, 51, 52, 53, 54], 'Mystic': [], 'Scout': [55], 'Villager': [56]}
+    dwarfRanger = {'Bounty Hunter': [57, 58, 59, 60], 'Coachman': [61], 'Entertainer': [62, 63], 'Flagellant': [], 'Messenger': [64, 65], 'Pedlar': [66, 67], 'Road Warden': [], 'Witch Huner': []}
+    dwarfRiverfolk = {'Boatman': [68, 69], 'Huffer': [70], 'Riverwarden': [], 'Riverwoman': [71, 72], 'Seaman': [73], 'Smuggler': [74, 75], 'Stevedore': [76, 77], 'Wrecker': [78]}
+    dwarfRogue = {'Bawd': [], 'Charlatan': [], 'Fence': [79], 'Grave Robber': [], 'Outlaw': [80, 81, 82], 'Racketeer': [83], 'Thief': [84], 'Witch': []}
+    dwarfWarrior = {'Cavalryman': [], 'Guard': [85, 86, 87], 'Knight': [], 'Pit Fighter': [88, 89, 90], 'Protagonist': [91, 92, 93], 'Soldier': [94, 95, 96], 'Slayer': [97, 98, 99, 100], 'Warrior Priest': []}
 
-    # Halfling Class with careers.
-    halflingAcademic = {1: 'Apothecary', 2: 'Engineer', 3: 'Lawyer', 4: 'Lawyer', 5: 'Physcian', 6: 'Physcian', 7: 'Scholar', 8: 'Scholar'}
-    halflingBurgher = {9: 'Agitator', 10: 'Agitator', 11: 'Artisan', 12: 'Artisan', 13: 'Artisan', 14: 'Artisan', 15: 'Artisan', 16: 'Beggar',
-                          18: 'Beggar', 19: 'Beggar', 20: 'Investigator', 21: 'Investigator', 22: 'Merchant', 23: 'Merchant',
-                          24: 'Merchant', 25: 'Merchant', 26: 'Rat Catcher', 27: 'Rat Catcher', 28: 'Rat Catcher', 29: 'Townsman', 30: 'Townsman',
-                          31: 'Townsman', 32: 'Watchman', 33: 'Watchman'}
-    halflingCourtier = {34: 'Advisor', 35: 'Artist', 36: 'Artist', 37: 'Envoy', 38: 'Servant', 39: 'Servant', 40: 'Servant', 41: 'Servant', 42: 'Servant',
-                        43: 'Servant', 44: 'Spy', 45: 'Warden', 46: 'Warden'}
-    halflingPeasant = {47: 'Bailiff', 48: 'Herbalist', 49: 'Herbalist', 50: 'Herbalist', 51: 'Hunter', 52: 'Hunter', 53: 'Miner', 54: 'Scout', 55: 'Villager',
-                           56: 'Villager', 57: 'Villager'}
-    halflingRanger = {58: 'Bounty Hunter', 59: 'Coachman', 60: 'Coachman', 61: 'Entertainer', 62: 'Entertainer', 63: 'Entertainer', 64: 'Messenger', 65: 'Messenger',
-                          66: 'Pedlar', 67: 'Pedlar', 68: 'Road Warden'}
-    halflingRiverfolk = {69: 'Boatman', 70: 'Huffer', 71: 'Riverwarden', 72: 'Riverwoman', 73: 'Riverwoman', 74: 'Riverwoman', 75: 'Seaman', 76: 'Smuggler',
-                             77: 'Smuggler', 78: 'Smuggler', 79: 'Smuggler', 80: 'Stevedore', 81: 'Stevedore', 82: 'Stevedore'}
-    halflingRogue = {83: 'Bawd', 84: 'Bawd', 85: 'Bawd', 86: 'Charlatan', 87: 'Fence', 88: 'Grave Robber', 89: 'Outlaw', 90: 'Racketeer', 91: 'Thief', 92: 'Thief',
-                         93: 'Thief', 94: 'Thief'}
-    halflingWarrior = {95: 'Guard', 96: 'Guard', 97: 'Pit Fighter', 98: 'Soldier', 99: 'Soldier', 100: 'Soldier'}
+    halflingAcademic = {'Apothecary': [1], 'Engineer': [2], 'Lawyer': [3, 4], 'Nun': [], 'Physcian': [5, 6], 'Priest': [], 'Scholar': [7, 8], 'Wizard': []}
+    halflingBurgher = {'Agitator': [9, 10], 'Artisan': [11, 12, 13, 14, 15], 'Beggar': [16, 17, 18, 19], 'Investigator': [20, 21], 'Merchant': [22, 23, 24, 25], 'Rat Catcher': [26, 27, 28], 'Townsman': [29, 30, 31], 'Watchman': [32, 33]}
+    halflingCourtier = {'Advisor': [34], 'Artist': [35, 36], 'Duelist': [], 'Envoy': [37], 'Noble': [], 'Servant': [38, 39, 40, 41, 42, 43], 'Spy': [44], 'Warden': [45, 46]}
+    laflingeasant = {'Bailiff': [47], 'Hedge Witch': [], 'Herbalist': [48, 49, 50], 'Hunter': [51, 52], 'Miner': [53], 'Mystic': [], 'Scout': [54], 'Villager': [55, 56, 57]}
+    halflingRanger = {'Bounty Hunter': [58], 'Coachman': [59, 60], 'Entertainer': [61, 62, 63], 'Flagellant': [], 'Messenger': [64, 65], 'Pedlar': [66, 67], 'Road Warden': [68], 'Witch Huner': []}
+    halflingRiverfolk = {'Boatman': [69], 'Huffer': [70], 'Riverwarden': [71], 'Riverwoman': [72, 73, 74], 'Seaman': [75], 'Smuggler': [76, 77, 78, 79], 'Stevedore': [80, 81, 82], 'Wrecker': []}
+    halflingRogue = {'Bawd': [83, 84, 85], 'Charlatan': [86], 'Fence': [87], 'Grave Robber': [88], 'Outlaw': [89], 'Racketeer': [90], 'Thief': [91, 92, 93, 94], 'Witch': []}
+    halflingWarrior = {'Cavalryman': [], 'Guard': [95, 96], 'Knight': [], 'Pit Fighter': [97], 'Protagonist': [], 'Soldier': [98, 99, 100], 'Slayer': [], 'Warrior Priest': []}
 
-    # High Elf Class with careers.
-    highelfAcademic = {1: 'Apothecary', 2: 'Apothecary', 3: 'Lawyer', 4: 'Lawyer', 5: 'Lawyer', 6: 'Lawyer', 7: 'Physcian', 8: 'Physcian', 9: 'Scholar', 10: 'Scholar',
-                          11: 'Scholar', 12: 'Scholar', 13: 'Wizard', 14: 'Wizard', 15: 'Wizard', 16: 'Wizard'}
-    highelfBurgher = {17: 'Artisan', 18: 'Artisan', 19: 'Artisan', 20: 'Investigator', 21: 'Investigator', 22: 'Merchant', 23: 'Merchant', 24: 'Merchant', 25: 'Merchant',
-                          26: 'Merchant', 27: 'Townsman', 28: 'Townsman', 29: 'Watchman'}
-    highelfCourtier = {30: 'Advisor', 31: 'Advisor', 32: 'Artist', 33: 'Duelist', 34: 'Duelist', 35: 'Envoy', 36: 'Envoy', 37: 'Envoy', 38: 'Noble', 39: 'Noble',
-                           40: 'Noble', 41: 'Spy', 42: 'Spy', 43: 'Spy', 44: 'Warden', 45: 'Warden'}
-    highelfPeasant = {46: 'Herbalist', 47: 'Herbalist', 48: 'Hunter', 49: 'Hunter', 50: 'Hunter', 51: 'Scout', 52: 'Scout', 53: 'Scout', 54: 'Scout', 55: 'Scout',
-                          56: 'Scout'}
-    highelfRanger = {57: 'Bounter Hunter', 58: 'Bounty Hunter', 59: 'Bounty Hunter', 60: 'Entertainer', 61: 'Entertainer', 62: 'Entertainer', 63: 'Messenger'}
-    highelfRiverfolk = {64: 'Boatman', 65: 'Seaman', 66: 'Seaman', 67: 'Seaman', 68: 'Seaman', 69: 'Seaman', 70: 'Seaman', 71: 'Seaman', 72: 'Seaman', 73: 'Seaman',
-                            74: 'Seaman', 75: 'Seaman', 76: 'Seaman', 77: 'Seaman', 78: 'Seaman', 79: 'Seaman', 80: 'Smuggler'}
-    highelfRogue = {81: 'Bawd', 82: 'Bawd', 83: 'Charlatan', 84: 'Charlatan', 85: 'Charlatan', 86: 'Outlaw', 87: 'Outlaw', 88: 'Outlaw'}
-    highelfWarrior = {89: 'Cavalryman', 90: 'Cavalryman', 91: 'Cavalryman', 92: 'Cavalryman', 93: 'Guard', 94: 'Guard', 95: 'Knight', 96: 'Pit Fighter', 97: 'Pit Fighter',
-                          98: 'Protagonist', 99: 'Soldier', 100: 'Soldier'}
+    highelfAcademic = {'Apothecary': [], 'Engineer': [], 'Lawyer': [], 'Nun': [], 'Physcian': [], 'Priest': [], 'Scholar': [], 'Wizard': []}
+    highelfBurgher = {'Agitator': [], 'Artisan': [], 'Beggar': [], 'Investigator': [], 'Merchant': [], 'Rat Catcher': [], 'Townsman': [], 'Watchman': []}
+    highelfCourtier = {'Advisor': [], 'Artist': [], 'Duelist': [], 'Envoy': [], 'Noble': [], 'Servant': [], 'Spy': [], 'Warden': []}
+    highelfPeasant = {'Bailiff': [], 'Hedge Witch': [], 'Herbalist': [], 'Hunter': [], 'Miner': [], 'Mystic': [], 'Scout': [], 'Villager': []}
+    highelfRanger = {'Bounty Hunter': [], 'Coachman': [], 'Entertainer': [], 'Flagellant': [], 'Messenger': [], 'Pedlar': [], 'Road Warden': [], 'Witch Huner': []}
+    highelfRiverfolk = {'Boatman': [], 'Huffer': [], 'Riverwarden': [], 'Riverwoman': [], 'Seaman': [], 'Smuggler': [], 'Stevedore': [], 'Wrecker': []}
+    highelfRogue = {'Bawd': [], 'Charlatan': [], 'Fence': [], 'Grave Robber': [], 'Outlaw': [], 'Racketeer': [], 'Thief': [], 'Witch': []}
+    highelfWarrior = {'Cavalryman': [], 'Guard': [], 'Knight': [], 'Pit Fighter': [], 'Protagonist': [], 'Soldier': [], 'Slayer': [], 'Warrior Priest': []}
 
-    # Wood Elf Class with careers.
-    woodelfAcademic = {1: 'Scholar', 2: 'Wizard', 3: 'Wizard', 4: 'Wizard', 5: 'Wizard'}
-    woodelfBurgher = {6: 'Artisan', 7: 'Artisan', 8: 'Artisan', 9: 'Artisan', 10: 'Artisan'}
-    woodelfCourtier = {11: 'Advisor', 12: 'Advisor', 13: 'Advisor', 14: 'Advisor', 15: 'Artist', 16: 'Artist', 17: 'Artist', 18: 'Artist', 19: 'Envoy', 20: 'Envoy',
-                       21: 'Envoy', 22: 'Envoy', 23: 'Envoy', 24: 'Envoy', 25: 'Envoy', 26: 'Noble', 27: 'Noble', 28: 'Noble', 29: 'Noble', 30: 'Noble', 31: 'Noble',
-                       32: 'Spy', 33: 'Spy', 34: 'Spy', 35: 'Spy'}
-    woodelfPeasant = {36: 'Herbalist', 37: 'Herbalist', 38: 'Herbalist', 39: 'Herbalist', 40: 'Herbalist', ''}
+    woodelfAcademic = {'Apothecary': [], 'Engineer': [], 'Lawyer': [], 'Nun': [], 'Physcian': [], 'Priest': [], 'Scholar': [], 'Wizard': []}
+    woodelfBurgher = {'Agitator': [], 'Artisan': [], 'Beggar': [], 'Investigator': [], 'Merchant': [], 'Rat Catcher': [], 'Townsman': [], 'Watchman': []}
+    woodelfCourtier = {'Advisor': [], 'Artist': [], 'Duelist': [], 'Envoy': [], 'Noble': [], 'Servant': [], 'Spy': [], 'Warden': []}
+    woodelfPeasant = {'Bailiff': [], 'Hedge Witch': [], 'Herbalist': [], 'Hunter': [], 'Miner': [], 'Mystic': [], 'Scout': [], 'Villager': []}
+    woodelfRanger = {'Bounty Hunter': [], 'Coachman': [], 'Entertainer': [], 'Flagellant': [], 'Messenger': [], 'Pedlar': [], 'Road Warden': [], 'Witch Huner': []}
+    woodelfRiverfolk = {'Boatman': [], 'Huffer': [], 'Riverwarden': [], 'Riverwoman': [], 'Seaman': [], 'Smuggler': [], 'Stevedore': [], 'Wrecker': []}
+    woodelfRogue = {'Bawd': [], 'Charlatan': [], 'Fence': [], 'Grave Robber': [], 'Outlaw': [], 'Racketeer': [], 'Thief': [], 'Witch': []}
+    woodelfWarrior = {'Cavalryman': [], 'Guard': [], 'Knight': [], 'Pit Fighter': [], 'Protagonist': [], 'Soldier': [], 'Slayer': [], 'Warrior Priest': []}
 
     print("""\n
     -----------------------------------------------------------------------------------------------------------
