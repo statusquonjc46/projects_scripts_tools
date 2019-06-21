@@ -65,14 +65,15 @@ def randomClass(species):
     - Burghers: Agitator, Artisan, Beggar, Investigator, Merchant, Rat Catcher, Townsman.
     - Courtiers: Advisor, Artist, Duelist, Envoy, Noble, Servant, Spy, Warden.
     - Peasants: Baliff, Hedge Witch, Herbalist, Hunter, Miner, Mystic, Scout, Villager.
-    - Rangers: Bounty Hunter, Coachman, Entertainer, Flagellant, Messanger, Pedlar, Road Warden, Witch Hunter.
+    - Rangers: Bounty Hunter, Coachman, Entertainer, Flagellant, Messenger, Pedlar, Road Warden, Witch Hunter.
     - Riverfolk: Boatman, Huffer, Riverwarden, Riverwoman, Seaman, Smuggler, Stevedore, Wrecker.
     - Rogues: Bawd, Charlatan, Fence, Grave Robber, Outlaw, Racketeer, Thief, Witch.
     - Warriors: Cavalryman, Guard, Knight, Pit Fighter, Protagonist, Soldier, Slayer, Warrior Priest.
     -----------------------------------------------------------------------------------------------------------\n""")
 
     d100 = random.randint(1, 100)
-
+    # Start of Human class and career selection.
+    # Start of Academic roll ranges.
     if species == 'Human (Reiklander)'':
         if d100 == 1:
             print('You are an Academic Human Apothecary')
@@ -107,6 +108,8 @@ def randomClass(species):
             specClass = 'Academic'
             specCareer = 'Wizard'
         elif d100 == 15:
+            # End of Academic roll ranges.
+            # Start of Burgher roll ranges.
             print('You are a Burgher Human Agitator')
             specClass = 'Burgher'
             specCareer = 'Agitator'
@@ -139,6 +142,8 @@ def randomClass(species):
             specClass = 'Burgher'
             specCareer = 'Watchman'
         elif d100 == 28:
+            # End of Burgher roll range.
+            # Start of Courtier roll range.
             print('You are a Courtier Human Advisor')
             specClass = 'Courtier'
             specCareer = 'Advisor'
@@ -170,6 +175,8 @@ def randomClass(species):
             print('You are a Courtier Human Warden')
             specClass = 'Courtier'
             specCareer = 'Warden'
+        # End of Courtier roll range.
+        # Start of Peasant roll range.
         elif d100 == 38:
             print('You are a Peasant Human Bailiff')
             specClass = 'Peasant'
@@ -202,6 +209,138 @@ def randomClass(species):
             print('You are a Peasant Human Villager')
             specClass = 'Peasant'
             specCareer = 'Villager'
+        # End of Peasant roll range.
+        # Start of Ranger roll range.
+        elif d100 == 51:
+            print('You are a Ranger Human Bounty Hunter')
+            specClass = 'Ranger'
+            specCareer = 'Bounter Hunter'
+        elif d100 == 52:
+            print('You are a Ranger Human Coachman')
+            specClass = 'Ranger'
+            specCareer = 'Coachman'
+        elif d100 == 53 or d100 == 54:
+            print('You are a Ranger Human Entertainer')
+            specClass = 'Ranger'
+            specCareer = 'Entertainer'
+        elif d100 == 55 or d100 == 56:
+            print('You are a Ranger Human Flagellant')
+            specClass = 'Ranger'
+            specCareer = 'Flagellant'
+        elif d100 == 57:
+            print('You are a Ranger Human Messanger')
+            specClass = 'Ranger'
+            specCareer = 'Messenger'
+        elif d100 == 58:
+            print('You are a Ranger Human Pedlar')
+            specClass = 'Ranger'
+            specCareer = 'Pedlar'
+        elif d100 == 59:
+            print('You are a Ranger Human Road Warden')
+            specClass = 'Ranger'
+            specCareer = 'Road Warden'
+        elif d100 == 60:
+            print('You are a Ranger Human Witch Hunter')
+            specClass = 'Ranger'
+            specCareer = 'Witch Hunter'
+        # End of Ranger roll range.
+        # Start of Riverfolk roll range.
+        elif d100 == 61 or d100 == 62:
+            print('You are a Riverfolk Human Boatman')
+            specClass = 'Riverfolk'
+            specCareer = 'Boatman'
+        elif d100 == 63:
+            print('You are a Riverfolk Human Huffer')
+            specClass = 'Riverfolk'
+            specCareer = 'Huffer'
+        elif d100 == 64 or d100 == 65:
+            print('You are a Riverfolk Human Riverwarden')
+            specClass = 'Riverfolk'
+            specCareer = 'Riverwarden'
+        elif d100 > 65 or d100 < 69:
+            print('You are a Riverfolk Human Riverwoman')
+            specClass = 'Riverfolk'
+            specCareer = 'Riverwoman'
+        elif d100 > 68 or d100 < 71:
+            print('You are a Riverfolk Human Seaman')
+            specClass = 'Riverfolk'
+            specCareer = 'Seaman'
+        elif d100 == 71:
+            print('You are a Riverfolk Human Smuggler')
+            specClass = 'Riverfolk'
+            specCareer = 'Smuggler'
+        elif d100 == 72 or d100 == 73:
+            print('You are a Riverfolk Human Stevedore')
+            specClass = 'Riverfolk'
+            specCareer = 'Stevedore'
+        elif d100 == 74:
+            print('You are a Riverfolk Human Wrecker')
+            specClass = 'Riverfolk'
+            specCareer = 'Wrecker'
+        # End of Riverfolk roll range.
+        # Start of Rogue roll range.
+        elif d100 == 75 or d100 == 76:
+            print('You are a Rogue Human Bawd')
+            specClass = 'Rogue'
+            specCareer = 'Bawd'
+        elif d100 == 77:
+            print('You are a Rogue Human Charlatan')
+            specClass = 'Rogue'
+            specCareer = 'Charlatan'
+        elif d100 == 78:
+            print('You are a Rogue Human Fence')
+            specClass = 'Rogue'
+            specCareer = 'Fence'
+        elif d100 == 79:
+            print('You are a Rogue Human Grave Robber')
+            specClass = 'Rogue'
+            specCareer = 'Grave Robber'
+        elif d100 > 79 or d100 < 84:
+            print('You are a Rogue Human Outlaw')
+            specClass = 'Rogue'
+            specCareer = 'Outlaw'
+        elif d100 == 84:
+            print('You are a Rogue Human Racketeer')
+            specClass = 'Rogue'
+            specCareer = 'Racketeer'
+        elif d100 > 84 or d100 < 87:
+            print('You are a Rogue Human Thief')
+            specClass = 'Rogue'
+            specCareer = 'Thief'
+        elif d100 == 88:
+            print('You are a Rogue Human Witch')
+            specClass = 'Rogue'
+            specCareer = 'Witch'
+        # End of Rogue roll ranges.
+        # Start of Warrior roll ranges.
+        elif d100 > 88 or d100 < 91:
+            print('You are a Warrior Human Cavalryman')
+            specClass = 'Warrior'
+            specCareer = 'Cavalryman'
+        elif d100 > 91 or d100 < 93:
+            print('You are a Warrior Human Guard')
+            specClass = 'Warrior'
+            specCareer = 'Guard'
+        elif d100 == 93:
+            print('You are a Warrior Human Knight')
+            specClass = 'Warrior'
+            specCareer = 'Knight'
+        elif d100 == 94:
+            print('You are a Warrior Human Pit Fighter')
+            specClass = 'Warrior'
+            specCareer = 'Pit Fighter'
+        elif d100 == 95:
+            print('You are a Warrior Human Protagonist')
+            specClass = 'Warrior'
+            specCareer = 'Protagonist'
+        elif d100 > 95 or d100 < 100:
+            print('You are a Warrior Human Soldier')
+            specClass = 'Warrior'
+            specCareer = 'Soldier'
+        elif d100 == 100:
+            print('You are a Warrior Human Warrior Priest')
+            specClass = 'Warrior'
+            specCareer = 'Warrior Priest'
 
 species = randomSpecies()
 randomClass(species)
