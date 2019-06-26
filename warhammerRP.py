@@ -31,17 +31,71 @@ Part 1: Species
 - This can be found on page 24 of the 4th Edition Guide.
 --------------------------------------------------------""")
 
+    humanST = {'Skills': ['Animal Care', 'Charm', 'Cool', 'Evaluate', 'Gossip', 'Haggle', 'Language (Bretonnian)',
+                          'Language (Wastelander)', 'Leadership', 'Lore (Reiklander)', 'Melee (Basic)', 'Ranged (Bow)'],
+               'Talents': ['Doomed', 'Savvy', 'Suave']}
+
+    dwarfST = {'Skills': ['Consume Alchohol', 'Cool', 'Endurance', 'Entertain (Storytelling)', 'Evaluate', 'Intimidate',
+                          'Language (Khazalid)', 'Lore (Dwarfs)', 'Lore (Geology)', 'Lore (Metallurgy)', 'Melee (Basic)', 'Trade (Any one)'],
+               'Talents': ['Magic Resistance', 'Night Vision', 'Read/Write', 'Relentless', 'Resolute', 'Strong-minded', 'Sturdy']}
+
+    halflingST = {'Skills': ['Charm', 'Consume Alchohol', 'Dodge', 'Gamble', 'Haggle', 'Intuition', 'Languge (Mootish)',
+                             'Lore (Reikland)', 'Perception', 'Sleight of Hand', 'Stealth (Any)', 'Trade (Cook)'],
+                  'Talents': ['Acute Sense (Taste)', 'Night Vision', 'Resistance (Chaos)', 'Small', 'Two Random']}
+
+    highelfST = {'Skills': ['Cool', 'Entertain (Sing)', 'Evaluate', 'Language (Eltharin)', 'Leadership', 'Melee (Basic)',
+                            'Navigation', 'Perception', 'Play (any one)', 'Ranged (Bow)', 'Sail', 'Swim'],
+                 'Talents': ['Acute Sense (Sight)', 'Coolheaded', 'Savvy', 'Night Vision', 'Second Sight', 'Sixth Sense', 'Read/Write']}
+
+    woodelfST = {'Skills': ['Athletics', 'Climb', 'Endurance', 'Entertain (Sing)', 'Intimidate', 'Language (Eltharin)', 'Melee (Basic)',
+                            'Outdoor Survival', 'Perception', 'Ranged (Bow)', 'Stealth (Rural)', 'Track'],
+                 'Talents': ['Acute Sense (Sight)', 'Hardy', 'Second Sight', 'Night Vision', 'Read/Write', 'Very Resilient', 'Rover']}
+
+    randomTal = {'Acute Sense (any one)': [1, 2, 3], 'Ambidextrous': [4, 5, 6], 'Animal Affinity': [7, 8, 9], 'Artistic': [10, 11, 12],
+                 'Attractive': [13, 14, 15], 'Coolheaded': [16, 17, 18], 'Craftsman (Any one)': [19, 20, 21], 'Flee!': [22, 23, 24],
+                 'Hardy': [25, 26, 27, 28], 'Lightning Reflexes': [29, 30, 31], 'Linguistics': [32, 33, 34], 'Luck': [35, 36, 37, 38],
+                 'Marksman': [39, 40, 41], 'Mimic': [42, 43, 44], 'Night Vision': [45, 46, 47], 'Nimble Fingered': [48, 49, 50],
+                 'Noble Blood': [51, 52], 'Orientation': [53, 54, 55], 'Perfect Pitch': [56, 57, 58], 'Pure Soul': [59, 60, 61, 62],
+                 'Read/Write': [63, 64, 65], 'Resistance (Any One)': [66, 67, 68], 'Savvy': [69, 70, 71], 'Sharp': [72, 73, 74],
+                 'Sixth Sense': [76, 77, 78], 'Strong Legs': [79, 80, 81], 'Sturdy': [82, 83, 84], 'Suave': [85, 86, 87],
+                 'Super Numerate': [88, 89, 90, 91], 'Very Resilient': [92, 93, 95], 'Very Strong': [95, 96, 97], 'Warrior Born': [98, 99, 100]}
+
     d100 = random.randint(1, 100)
     if d100 > 0 and d100 < 91:
-        return d100, 'Human (Reiklander)'
+        talents = ['']
+        # Below is the logic to randomly generate skills. If you didn't get all the skills that your species has in the book.
+        # but I can't read, in which case, there is no logic needed. But this logic took a long time to figure out
+        # so I am just going to comment it out.
+        # for x in range(6):
+        #    skl = humanST['Skills'][random.randint(0, end)]
+        #    humanST['Skills'].remove(skl)
+        #    skills.insert(x, tal)
+        #    skills.pop()
+        #    end = end - 1
+        for y in range(3):
+            talRoll = random.randint(1, 100)
+            for key in randomTal:
+                for roll in randomTal[key]:
+                    if talRoll == roll:
+                        humanST['Talents'].append(key)
+
+        return [d100, 'Human (Reiklander)', humanST]
     elif d100 > 90 and d100 < 95:
-        return d100, 'Halfling'
+        talents = ['']
+        for y in range(2):
+            d100 = random.randint(1, 100)
+            print (d100)
+            for key in randomTal:
+                for roll in randomTal[key]:
+                    if d100 == roll:
+                        halfLingST['Talents'].append(key)
+        return [d100, 'Halfling', halflingST]
     elif d100 > 94 and d100 < 99:
-        return d100, 'Dwarf'
+        return [d100, 'Dwarf', dwarfST]
     elif d100 == 99:
-        return d100, 'High Elf'
+        return [d100, 'High Elf', highelfST]
     elif d100 == 100:
-        return d100, 'Wood Elf'
+        return [d100, 'Wood Elf', woodelfST]
 
 def randomClass(species):
     firstRoll = species[0]
@@ -478,6 +532,7 @@ Part 3: Attributes
     return [wep, ball, stren, tough, initi, agi, dex, intell, willpow, fellow, wounds, fate, resil, extra, movement]
 
 species = randomSpecies()
+stDict = species[2]
 time.sleep(5)
 classCareer = randomClass(species)
 time.sleep(5)
@@ -514,6 +569,14 @@ Part 4: Exit Prompt
 [Resilience]: {attTable[12]}.
 [Extra Points]: {attTable[13]}.
 [Movement]: {attTable[14]}.
+
+-Your Skills and Talents portfolio is below:
+--------------------------------------------
+[Skills]: {stDict['Skills'][0]}, {stDict['Skills'][1]}, {stDict['Skills'][2]}, {stDict['Skills'][3]}, {stDict['Skills'][4]},
+{stDict['Skills'][5]}, {stDict['Skills'][6]}, {stDict['Skills'][7]}, {stDict['Skills'][8]}, {stDict['Skills'][9]},
+{stDict['Skills'][10]}, {stDict['Skills'][11]}.
+
+[Talents]: {stDict['Talents'][0]}, {stDict['Skills'][1]}, {stDict['Skills'][2]}, {stDict['Skills'][3]}, {stDict['Skills'][4]}
 
 - You have completed the random character creation tool for Warhammer Fantasy RP.
 - Roll again for a chance at a different opportunity!
