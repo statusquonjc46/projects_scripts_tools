@@ -178,7 +178,7 @@ Part 2: Class and Career
                         career = charClass
         elif d100 > 9 and d100 < 35:
             for charClass in dwarfBurgher:
-                for posRoll in dwrfBurgher[charClass]:
+                for posRoll in dwarfBurgher[charClass]:
                     if posRoll == d100:
                         specClass = 'Burgher'
                         career = charClass
@@ -219,14 +219,272 @@ Part 2: Class and Career
                         specClass = 'Warrior'
                         career = charClass
 
+    elif species == 'Halfling':
+        if d100 < 9:
+            for charClass in halflingAcademic:
+                for posRoll in halflingAcademic[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Academic'
+                        career = charClass
+        elif d100 > 8 and d100 < 34:
+            for charClass in halflingBurgher:
+                for posRoll in halflingBurgher[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Burgher'
+                        career = charClass
+        elif d100 > 33 and d100 < 47:
+            for charClass in halflingCourtier:
+                for posRoll in halflingCourtier[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Courtier'
+                        career = charClass
+        elif d100 > 46 and d100 < 58:
+            for charClass in halflingPeasant:
+                for posRoll in halflingPeasant[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Peasant'
+                        career = charClass
+        elif d100 > 57 and d100 < 69:
+            for charClass in halflingRanger:
+                for posRoll in halflingRanger[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Ranger'
+                        career = charClass
+        elif d100 > 68 and d100 < 83:
+            for charClass in halflingRiverfolk:
+                for posRoll in halflingRiverfolk[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Riverfolk'
+                        career = charClass
+        elif d100 > 82 and d100 < 95:
+            for charClass in halflingRogue:
+                for posRoll in halflingRogue[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Rogue'
+                        career = charClass
+        else:
+            for charClass in halflingWarrior:
+                for posRoll in halflingWarrior[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Warrior'
+                        career = charClass
+
+    elif species == 'High Elf':
+        if d100 < 17:
+            for charClass in highelfAcademic:
+                for posRoll in highelfAcademic[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Academic'
+                        career = charClass
+        elif d100 > 16 and d100 < 30:
+            for charClass in highelfBurgher:
+                for posRoll in highelfBurgher[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Burgher'
+                        career = charClass
+        elif d100 > 29 and d100 < 46:
+            for charClass in highelfCourtier:
+                for posRoll in highelfCourtier[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Courtier'
+                        career = charClass
+        elif d100 > 45 and d100 < 57:
+            for charClass in highelfPeasant:
+                for posRoll in highelfPeasant[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Peasant'
+                        career = charClass
+        elif d100 > 56 and d100 < 64:
+            for charClass in highelfRanger:
+                for posRoll in highelfRanger[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Ranger'
+                        career = charClass
+        elif d100 > 63 and d100 < 81:
+            for charClass in highelfRiverfolk:
+                for posRoll in highelfRiverfolk[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Riverfolk'
+                        career = charClass
+        elif d100 > 80 and d100 < 89:
+            for charClass in highelfRogue:
+                for posRoll in highelfRogue[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Rogue'
+                        career = charClass
+        else:
+            for charClass in highelfWarrior:
+                for posRoll in highelfWarrior[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Warrior'
+                        career = charClass
+
+    elif species == 'Wood Elf':
+        if d100 < 6:
+            for charClass in woodelfAcademic:
+                for posRoll in woodelfAcademic[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Academic'
+                        career = charClass
+        elif d100 > 5 and d100 < 11:
+            for charClass in woodelfBurgher:
+                for posRoll in woodelfBurgher[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Burgher'
+                        career = charClass
+        elif d100 > 10 and d100 < 36:
+            for charClass in woodelfCourtier:
+                for posRoll in woodelfCourtier[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Courtier'
+                        career = charClass
+        elif d100 > 35 and d100 < 69:
+            for charClass in woodelfPeasant:
+                for posRoll in woodelfPeasant[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Peasant'
+                        career = charClass
+        elif d100 > 68 and d100 < 79:
+            for charClass in woodelfRanger:
+                for posRoll in woodelfRanger[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Ranger'
+                        career = charClass
+        elif d100 > 78 and d100 < 80:
+            for charClass in woodelfRiverfolk:
+                for posRoll in woodelfRiverfolk[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Riverfolk'
+                        career = charClass
+        elif d100 > 79 and d100 < 86:
+            for charClass in woodelfRogue:
+                for posRoll in woodelfRogue[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Rogue'
+                        career = charClass
+        else:
+            for charClass in woodelfWarrior:
+                for posRoll in woodelfWarrior[charClass]:
+                    if posRoll == d100:
+                        specClass = 'Warrior'
+                        career = charClass
+
     return [d100, specClass, career]
+
+def attributeTable(species):
+    print("""
+Part 3: Attributes
+------------------------------------------------------------------------------
+- Now we will roll for your attributes and skills.
+- The attributes that will be rolled for are as follows:
+    - Weapon skill
+    - Ballistic skill
+    - Strength
+    - Toughness
+    - Initiative
+    - Agility
+    - Dexeterity
+    - Intelligence
+    - Willpower
+    - Fellowship
+- Wounds, Fate, Resilience, Extra Points, and Movement will be displayed as is
+  in the table on page 33.
+------------------------------------------------------------------------------""")
+    species = species[1]
+    wep = 0
+    ball = 0
+    stren = 0
+    tough = 0
+    initi = 0
+    agi = 0
+    dex = 0
+    intell = 0
+    willpow = 0
+    fellow = 0
+    wounds = 0
+    fate = 0
+    resil = 0
+    extra = 0
+    movement = 0
+
+    if species == 'Human (Reiklander)':
+        wep = 20 + random.randint(1, 10) + random.randint(1, 10)
+        ball = 20 + random.randint(1, 10) + random.randint(1, 10)
+        stren = 20 + random.randint(1, 10) + random.randint(1, 10)
+        tough = 20 + random.randint(1, 10) + random.randint(1, 10)
+        initi = 20 + random.randint(1, 10) + random.randint(1, 10)
+        agi = 20 + random.randint(1, 10) + random.randint(1, 10)
+        dex = 20 + random.randint(1, 10) + random.randint(1, 10)
+        intell = 20 + random.randint(1, 10) + random.randint(1, 10)
+        willpow = 20 + random.randint(1, 10) + random.randint(1, 10)
+        fellow = 20 + random.randint(1, 10) + random.randint(1, 10)
+        fate = 2
+        resil = 1
+        extra = 3
+        movement = 4
+        wounds = stren + (2 * tough) + willpow
+
+    elif species == 'Dwarf':
+        wep = 30 + random.randint(1, 10) + random.randint(1, 10)
+        ball = 20 + random.randint(1, 10) + random.randint(1, 10)
+        stren = 20 + random.randint(1, 10) + random.randint(1, 10)
+        tough = 30 + random.randint(1, 10) + random.randint(1, 10)
+        initi = 20 + random.randint(1, 10) + random.randint(1, 10)
+        agi = 10 + random.randint(1, 10) + random.randint(1, 10)
+        dex = 30 + random.randint(1, 10) + random.randint(1, 10)
+        intell = 20 + random.randint(1, 10) + random.randint(1, 10)
+        willpow = 40 + random.randint(1, 10) + random.randint(1, 10)
+        fellow = 10 + random.randint(1, 10) + random.randint(1, 10)
+        fate = 0
+        resil = 2
+        extra = 2
+        movement = 2
+        wounds = stren + (2 * tough) + willpow
+
+    elif species == 'Halfling':
+        wep = 10 + random.randint(1, 10) + random.randint(1, 10)
+        ball = 30 + random.randint(1, 10) + random.randint(1, 10)
+        stren = 10 + random.randint(1, 10) + random.randint(1, 10)
+        tough = 20 + random.randint(1, 10) + random.randint(1, 10)
+        initi = 20 + random.randint(1, 10) + random.randint(1, 10)
+        agi = 20 + random.randint(1, 10) + random.randint(1, 10)
+        dex = 30 + random.randint(1, 10) + random.randint(1, 10)
+        intell = 20 + random.randint(1, 10) + random.randint(1, 10)
+        willpow = 30 + random.randint(1, 10) + random.randint(1, 10)
+        fellow = 30 + random.randint(1, 10) + random.randint(1, 10)
+        fate = 0
+        resil = 2
+        extra = 3
+        movement = 3
+        wounds = (2 * tough) + willpow
+
+    elif species == 'High Elf' or species == 'Wood Elf':
+        wep = 30 + random.randint(1, 10) + random.randint(1, 10)
+        ball = 30 + random.randint(1, 10) + random.randint(1, 10)
+        stren = 20 + random.randint(1, 10) + random.randint(1, 10)
+        tough = 30 + random.randint(1, 10) + random.randint(1, 10)
+        initi = 40 + random.randint(1, 10) + random.randint(1, 10)
+        agi = 30 + random.randint(1, 10) + random.randint(1, 10)
+        dex = 30 + random.randint(1, 10) + random.randint(1, 10)
+        intell = 30 + random.randint(1, 10) + random.randint(1, 10)
+        willpow = 30 + random.randint(1, 10) + random.randint(1, 10)
+        fellow = 20 + random.randint(1, 10) + random.randint(1, 10)
+        fate = 0
+        resil = 0
+        extra = 2
+        movement = 5
+        wounds = stren + (2 * tough) + willpow
+
+    return [wep, ball, stren, tough, initi, agi, dex, intell, willpow, fellow, wounds, fate, resil, extra, movement]
 
 species = randomSpecies()
 time.sleep(5)
 classCareer = randomClass(species)
 time.sleep(5)
+attTable = attributeTable(species)
+print (attTable)
 print(f"""
-Part: 3 Exit Prompt
+Part 4: Exit Prompt
 ----------------------------------------------------------------------------------
 - Roll for [Species]: {species[0]}.
 - Roll for [Class] and [Career]: {classCareer[0]}
@@ -238,6 +496,24 @@ Part: 3 Exit Prompt
 [Class]: {classCareer[1]}.
 [Career]: {classCareer[2]}.
 --------------------------------
+
+- Your Attribute Table is below:
+--------------------------------
+[Weapon Skill]: {attTable[0]}.
+[Ballistic Skill]: {attTable[1]}.
+[Strength]: {attTable[2]}.
+[Toughness]: {attTable[3]}.
+[Initiative]: {attTable[4]}.
+[Agility]: {attTable[5]}.
+[Dexterity]: {attTable[6]}.
+[Intelligence]: {attTable[7]}.
+[Willpower]: {attTable[8]}.
+[Fellowship]: {attTable[9]}.
+[Wounds]: {attTable[10]}.
+[Fate]: {attTable[11]}.
+[Resilience]: {attTable[12]}.
+[Extra Points]: {attTable[13]}.
+[Movement]: {attTable[14]}.
 
 - You have completed the random character creation tool for Warhammer Fantasy RP.
 - Roll again for a chance at a different opportunity!
