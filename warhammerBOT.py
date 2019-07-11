@@ -576,7 +576,7 @@ async def warhammer(ctx):
         [Talents]: {stDict['Talents'][0]}, {stDict['Talents'][1]}, {stDict['Talents'][2]}, {stDict['Talents'][3]}, {stDict['Talents'][4]}."""
 
         return exitP
-
+# all the send calls to the discord channel.
     await ctx.send(f'Hello {ctx.message.author.mention}, thanks for requesting me to generate your character. See the results below!')
     exitPT = exitPrompt(species, stDict, classCareer, attTable)
     aembed = discord.Embed(title="Warhammer Bot", color=0xeee657)
@@ -598,35 +598,27 @@ async def warhammer(ctx):
     await ctx.send(embed=dembed)
     time.sleep(4)
     await ctx.send(embed=eembed)
-
+# command for showing the bot information.
 @bot.command()
 async def info(ctx):
     embed = discord.Embed(title="Warhammer Bot", description="I give you the best stats for you Warhammer RP Characters", color=0xeee657)
-
-    # give info about you here
     embed.add_field(name="Author", value="Nicholas Coletta//_StatusQuo")
-
-    # Shows the number of servers the bot is member of.
     embed.add_field(name="Server count", value=f"{len(bot.guilds)}")
-
-    # give users a link to invite thsi bot to their server
     embed.add_field(name="Invite", value="https://discordapp.com/api/oauth2/authorize?scope=bot&client_id=598870220907479075")
-
     await ctx.send(embed=embed)
-
+# removing default help command.
 bot.remove_command('help')
-
+# command for helping users run the bot.
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title="Warhammer Bot", description="I do two things. Provide a random Warhammer RP Character, and info about my creation. Commands below: ", color=0xeee657)
-
     embed.add_field(name=">warhammer", value="Generate your character!", inline=False)
     embed.add_field(name=">info", value="Gives a little info about the bot", inline=False)
     embed.add_field(name=">help", value="Gives this message", inline=False)
-
     await ctx.send(embed=embed)
 
-key = open('/Users/nicholascoletta/Desktop/git/projects_with_no_real_use/disc.txt', 'r')
+# getting the secret key, and running the bot.
+key = open('disc.txt', 'r')
 token = key.readline().strip()
 bot.run(token)
 key.close()
