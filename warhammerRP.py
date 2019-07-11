@@ -128,7 +128,7 @@ def randomClass(species):
     halflingAcademic = {'Apothecary': [1], 'Engineer': [2], 'Lawyer': [3, 4], 'Nun': [], 'Physcian': [5, 6], 'Priest': [], 'Scholar': [7, 8], 'Wizard': []}
     halflingBurgher = {'Agitator': [9, 10], 'Artisan': [11, 12, 13, 14, 15], 'Beggar': [16, 17, 18, 19], 'Investigator': [20, 21], 'Merchant': [22, 23, 24, 25], 'Rat Catcher': [26, 27, 28], 'Townsman': [29, 30, 31], 'Watchman': [32, 33]}
     halflingCourtier = {'Advisor': [34], 'Artist': [35, 36], 'Duelist': [], 'Envoy': [37], 'Noble': [], 'Servant': [38, 39, 40, 41, 42, 43], 'Spy': [44], 'Warden': [45, 46]}
-    laflingeasant = {'Bailiff': [47], 'Hedge Witch': [], 'Herbalist': [48, 49, 50], 'Hunter': [51, 52], 'Miner': [53], 'Mystic': [], 'Scout': [54], 'Villager': [55, 56, 57]}
+    laflingPeasant = {'Bailiff': [47], 'Hedge Witch': [], 'Herbalist': [48, 49, 50], 'Hunter': [51, 52], 'Miner': [53], 'Mystic': [], 'Scout': [54], 'Villager': [55, 56, 57]}
     halflingRanger = {'Bounty Hunter': [58], 'Coachman': [59, 60], 'Entertainer': [61, 62, 63], 'Flagellant': [], 'Messenger': [64, 65], 'Pedlar': [66, 67], 'Road Warden': [68], 'Witch Huner': []}
     halflingRiverfolk = {'Boatman': [69], 'Huffer': [70], 'Riverwarden': [71], 'Riverwoman': [72, 73, 74], 'Seaman': [75], 'Smuggler': [76, 77, 78, 79], 'Stevedore': [80, 81, 82], 'Wrecker': []}
     halflingRogue = {'Bawd': [83, 84, 85], 'Charlatan': [86], 'Fence': [87], 'Grave Robber': [88], 'Outlaw': [89], 'Racketeer': [90], 'Thief': [91, 92, 93, 94], 'Witch': []}
@@ -537,7 +537,7 @@ time.sleep(5)
 classCareer = randomClass(species)
 time.sleep(5)
 attTable = attributeTable(species)
-print (attTable)
+
 print(f"""
 Part 4: Exit Prompt
 ----------------------------------------------------------------------------------
@@ -576,8 +576,9 @@ Part 4: Exit Prompt
 {stDict['Skills'][5]}, {stDict['Skills'][6]}, {stDict['Skills'][7]}, {stDict['Skills'][8]}, {stDict['Skills'][9]},
 {stDict['Skills'][10]}, {stDict['Skills'][11]}.
 
-[Talents]: {stDict['Talents'][0]}, {stDict['Skills'][1]}, {stDict['Skills'][2]}, {stDict['Skills'][3]}, {stDict['Skills'][4]}
+[Talents]: {stDict['Talents'][0]}, {stDict['Talents'][1]}, {stDict['Talents'][2]}, {stDict['Talents'][3]}, {stDict['Talents'][4]}
 
+----------------------------------------------------------------------------------
 - You have completed the random character creation tool for Warhammer Fantasy RP.
 - Roll again for a chance at a different opportunity!
 ----------------------------------------------------------------------------------

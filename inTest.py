@@ -27,8 +27,7 @@ for a in preclin:
         print(a, b)
         if a[0] == b[0]:
             if a[:4] in b[:4]:
-                userinput = input("Are these the same company: " + a +
-                                  " and " + b + " [y for yes, n for no]\n")
+                userinput = input("Are these the same company: " + a + " and " + b + " [y for yes, n for no]\n")
                 if userinput == "y":
                     print(a + " has been confirmed as the same company as " + b + "\n")
                     notInBoth.remove(a)
