@@ -2,7 +2,6 @@
 # Simple password generator based on user input bit size.
 # By Nicholas Coletta, in the year 2019.
 # www.github.com/statusquonjc46 for plenty of other python things that may or may not be useful to you. Also my IT490 full stack project lol.
-
 import random
 
 word_file = open('/Users/nicholascoletta/Desktop/git/projects_with_no_real_use/40kwords.txt', 'r')
