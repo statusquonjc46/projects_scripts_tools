@@ -4,7 +4,7 @@
 # www.github.com/statusquonjc46 for plenty of other python things that may or may not be useful to you. Also my IT490 full stack project lol.
 import random
 
-word_file = open('/Users/nicholascoletta/Desktop/git/projects_with_no_real_use/python/40kwords.txt', 'r')
+word_file = open('/Users/nicholascoletta/Desktop/git/projects_scripts_tools/python/40kwords.txt', 'r')
 word_list = []
 
 word_list = list(word_file)
