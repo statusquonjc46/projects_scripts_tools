@@ -8,9 +8,16 @@ import os
 import time
 
 userName = input("Please enter your name: ")
-userDay = input("Please enter the day to add: ")
-userStart = input("Please enter your start time: ")
-userEnd = input("Please enter your end time: ")
+userDay = input("What weekday are you entering times for: ")
+noChange = input("Has your schedule changed from 7:30AM - 4PM? (Y/N)")
+
+if noChange == "N" or noChange == "n":
+	userStart = "7:30AM"
+	userEnd = "4:00PM"
+else:
+	userStart = input("Please enter your start time: ")
+	userEnd = input("Please enter your end time: ")
+
 lunchLng = input("How long was lunch? ")
 inputDate = time.asctime(time.localtime(time.time()))
 newSheet = input("Do you need a new sheet? \n")
@@ -27,7 +34,7 @@ else:
 
 PWDfile = f'{fileLoc}timesheet-{weekEnd}'
 
-print("*Current timesheet below*\n")
+print("\n*Current timesheet below*\n")
 print(f'----{outFile.name}----')
 os.system(f'cat {PWDfile}')
 outFile.write("-----------------------------------------------------------------\n")
@@ -35,7 +42,7 @@ outFile.write(f'{userDay} - Start: {userStart} - End: {userEnd} - Lunch: {lunchL
 outFile.write("-----------------------------------------------------------------\n")
 outFile.close()
 
-print(f'[Submitted, {userName}, Thank you!]')
+print(f'[Submitted, {userName}, Thank you!]\n')
 print(f'Printing updated timesheet for week end date: {weekEnd}\n')
 os.system(f'cat {PWDfile}')
 
