@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta http-equiv="refresh" content="30">
+        <meta name="author" content="Nicholas Coletta"/>
+        <meta name="description" content="Personal Webpage, Resume, ">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+        <title>
+            N. Coletta, IT Specialist
+        </title>
+        {% block head %} {% endblock %}
+    </head>
+    <header>
+        <img class="logo" src="">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Root</a></li>
+                    <li><a href="#">/Resume</a></li>
+                    <li><a href="#">/Github</a></li>
+                    <li><a href="#">/Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <body>
+        {% block body %} {% endblock %}
+    </body>
+</html>
