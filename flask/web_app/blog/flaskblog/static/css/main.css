@@ -5,6 +5,10 @@ body {
     color: rgba(8, 106, 119, 1)
 }
 
+.term-prompt {
+    padding-left: 5px;
+}
+
 .cat-command {
     font-family: Monaco;
     color: white;
