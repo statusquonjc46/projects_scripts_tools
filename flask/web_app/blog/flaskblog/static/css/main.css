@@ -17,7 +17,9 @@ body {
 }
 
 header {
-    
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-color: rgba(8, 106, 119, 1)
 }
 
 header::after {
@@ -28,6 +30,8 @@ header::after {
 
 .logo {
     float: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
     padding: 0px;
 }
 
@@ -58,7 +62,7 @@ nav a {
 }
 
 nav a:hover {
-    color: rgb(0, 0, 0);
+    color:white;
 }
 
 nav a::before {
@@ -66,7 +70,7 @@ nav a::before {
     display: block;
     height: 3px;
     width: 0%;
-    background-color: grey;
+    background-color: rgba(8, 106, 119, 1);
     top: 0;
     position: absolute;
     transition: all ease-in-out 250ms;
@@ -75,3 +79,22 @@ nav a::before {
 nav a:hover::before {
     width: 100%;
 }
+
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin: 0 auto;
+}
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
