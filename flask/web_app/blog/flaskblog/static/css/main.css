@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background-color: grey;
+    
 }
 
 header::after {
@@ -28,7 +28,7 @@ header::after {
 
 .logo {
     float: left;
-    padding: 10px 0;
+    padding: 0px;
 }
 
  nav {
@@ -43,11 +43,11 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-left: 30px;
     color:  rgba(8, 106, 119, 1);
-    font-size: 14px;
-    margin: 10px;
-    padding-top: 5px;
+    font-size: 16px;
+    margin-left: 40px;
+    padding-top: 43px;
+    padding-right: 10px;
     position: relative;
 }
 
@@ -58,15 +58,20 @@ nav a {
 }
 
 nav a:hover {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 nav a::before {
     content: '';
     display: block;
-    height: 5px;
-    width: 100%;
-    background-color: white;
+    height: 3px;
+    width: 0%;
+    background-color: grey;
     top: 0;
     position: absolute;
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
 }
